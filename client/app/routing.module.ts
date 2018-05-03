@@ -1,3 +1,4 @@
+import { NewsComponent } from './news/news.component';
 import { BilleterieComponent } from './billeterie/billeterie.component';
 import { TeamsComponent } from './teams/teams.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 const routes: Routes = [
   { path: '', component: AboutComponent },
   { path: 'teams', component: TeamsComponent },
+  { path: 'news', component: NewsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
