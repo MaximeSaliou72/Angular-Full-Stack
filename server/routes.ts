@@ -1,6 +1,7 @@
 import * as express from 'express';
 
 import CatController from './controllers/CatController';
+import WilderController from './controllers/WilderController';
 import UserController from './controllers/UserController';
 // import cat from './models/cat';
 // import user from './models/user';
@@ -10,6 +11,7 @@ export default function routes(app) {
   const router = express.Router();
 
   const cat = new CatController();
+  const wilder = new WilderController();
   const user = new UserController();
 
   // cats
@@ -19,6 +21,14 @@ export default function routes(app) {
   router.route('/cat/:id').get(cat.get);
   router.route('/cat/:id').put(cat.update);
   router.route('/cat/:id').delete(cat.delete);
+
+  // wilders
+  router.route('/wilders').get(wilder.getAll);
+  router.route('/wilders/count').get(wilder.count);
+  router.route('/wilder').post(wilder.insert);
+  router.route('/wilder/:id').get(wilder.get);
+  router.route('/wilder/:id').put(wilder.update);
+  router.route('/wilder/:id').delete(wilder.delete);
 
   // users
   router.route('/login').post(user.login);
