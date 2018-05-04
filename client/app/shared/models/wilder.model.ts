@@ -4,4 +4,5 @@ export class Wilder {
   groupName?: string;
   states?: string;
   resume?: string;
+  url?: string;
 }
