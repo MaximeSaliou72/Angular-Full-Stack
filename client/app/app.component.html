@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a routerLink="/teams" class="nav-link" routerLinkActive="active">
             <i class="fa fa-list"></i> Teams
+          </a>
+        </li>
+        <li>
           <a routerLink="/matches" class="nav-link" routerLinkActive="active">
             <i class="fa fa-list"></i> Matches
           </a>
@@ -25,35 +28,11 @@
             <i class="fa fa-list"></i> News
           </a>
         </li>
+        
         <li class="nav-item">
-          <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-            <i class="fa fa-sign-in"></i> Login
+          <a routerLink="/billeterie" class="nav-link" routerLinkActive="active">
+            <i class="fa fa-sign-out"></i> Billeterie
           </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-            <i class="fa fa-user-plus"></i> Register
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/account" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-            <i class="fa fa-user"></i> Account ({{ auth.currentUser.username }})
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/admin" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
-            <i class="fa fa-lock"></i> Admin
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-            <i class="fa fa-sign-out"></i> Logout
-          </a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="/billeterie" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-sign-out"></i> Billeterie
-            </a>
         </li>
       </ul>
     </div>
