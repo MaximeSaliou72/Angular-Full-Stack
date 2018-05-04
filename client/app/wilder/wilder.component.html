@@ -1,0 +1,63 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="card mb-3" *ngIf="!isLoading">
+    <h4 class="card-header">Current wilders ({{ wilders.length }})</h4>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Group Name</th>
+                    <th scope="col">States</th>
+                    <th scope="col">Resume</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="wilder.length === 0">
+                <tr>
+                    <td colspan="4">There are no wilders in the DB. Add a new wilder below.</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="!isEditing">
+                <tr *ngFor="let wilder of wilders">
+                    <td>{{ wilder.name }}</td>
+                    <td>{{ wilder.groupName }}</td>
+                    <td>{{ wilder.states }}</td>
+                    <td>{{ wilder.resume }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" (click)="enableEditing(wilder)"><i class="fa fa-pencil"></i> Edit</button>
+                        <button class="btn btn-sm btn-danger" (click)="deleteWilder(wilder)"><i class="fa fa-trash"></i> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="isEditing">
+                <tr>
+                    <td colspan="4">
+                        <form class="form-inline" #form="ngForm" (ngSubmit)="editWilder(wilder)">
+                            <input class="form-control mr-2" type="text" name="name" [(ngModel)]="wilder.name" placeholder="Name" required>
+                            <input class="form-control mr-2" type="text" name="groupName" [(ngModel)]="wilder.groupName" placeholder="GroupName" min="0" required>
+                            <input class="form-control mr-2" type="text" name="states" [(ngModel)]="wilder.states" placeholder="States" step="any" min="0" required>
+                            <input class="form-control mr-2" type="text" name="resume" [(ngModel)]="wilder.resume" placeholder="Resume" step="any" min="0" required>
+                            <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+                            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card" *ngIf="!isEditing">
+    <h4 class="card-header">Add new wilder</h4>
+    <div class="card-body">
+        <form class="form-inline" [formGroup]="addWilderForm" (ngSubmit)="addWilder()">
+            <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Name">
+            <input class="form-control mr-2" type="text" name="groupName" formControlName="groupName" placeholder="GroupName" step="any" min="0">
+            <input class="form-control mr-2" type="text" name="states" formControlName="states" placeholder="States" min="0">
+            <input class="form-control mr-2" type="text" name="resume" formControlName="resume" placeholder="Resume" min="0">
+            <button class="btn btn-primary" type="submit" [disabled]="!addWilderForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+        </form>
+    </div>
+</div>
