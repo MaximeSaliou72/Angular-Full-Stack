@@ -1,0 +1,48 @@
+@font-face {
+    font-family: textes;
+    src: url('/assets/Fonts/SF Atarian System Extended.ttf');
+}
+
+h4 {
+    background-color: #FC9E51;
+    font-size: 250%;
+    text-decoration: underline;
+    font-family: textes;
+}
+
+p {
+    color: orange;
+    font-size: 200%;
+}
+
+.vm {
+    color: orange;
+    font-size: 150%;
+}
+
+dt {
+    font-size: 200%;
+    text-decoration: underline;
+    font-weight: bold;
+    color: orangered;
+    font-family: textes;
+}
+
+dd {
+    font-size: 150%;
+    font-style: italic;
+    color: grey;
+}
+
+h2 {
+    font-size: 200%;
+    text-decoration: underline;
+    font-weight: bold;
+    color: orangered;
+    font-family: textes;
+}
+
+.final {
+    text-decoration: underline;
+    color: green;
+}

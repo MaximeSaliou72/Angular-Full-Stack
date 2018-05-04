@@ -25,12 +25,12 @@
             <img class='img-fluid' src="./assets/images/portugal.gif">
           </div>
           <div class="col-md-4" *ngIf="compteur >= 3">
-            <img class='img-fluid' src="./assets/images/portugal.gif">
             <img class='img-fluid' src="./assets/images/Sweden.png">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
           </div>
           <div class="col-md-4 offset-md-4" *ngIf="compteur == 2">
-            <img class='img-fluid' src="./assets/images/portugal.gif">
             <img class='img-fluid' src="./assets/images/Sweden.png">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
           </div>
           <div class="col-md-4 offset-md-8" *ngIf="compteur == 1">
             <img class='img-fluid' src="./assets/images/Sweden.png">
@@ -58,7 +58,7 @@
     <div class="row align-items-center" *ngIf="compteur >= 4">
       <div class="col-md-2">
         <a href="http://www.gifsanimes.com/cat-feux-d-artifice-492.htm">
-          <img src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
+          <img class="feu" src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
           />
         </a>
       </div>
@@ -67,9 +67,45 @@
       </div>
       <div class="col-md-2">
         <a href="http://www.gifsanimes.com/cat-feux-d-artifice-492.htm">
-          <img src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
+          <img class="feux" src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
           />
         </a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="compteur >= 4">
+    <h1 id="winner">Les gagnant de cette World Wide Cup est la Team Osefdunom</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+  
+                <img class="card-img-top" alt="Bootstrap Thumbnail First" src="https://res.cloudinary.com/dpcas2fq7/image/upload/v1525356018/Osefdunom/B._Burel.png"
+                />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img class="card-img-top" alt="Bootstrap Thumbnail Second" src="https://res.cloudinary.com/dpcas2fq7/image/upload/v1525427994/C._Bouve.png"
+                />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img class="card-img-top" alt="Bootstrap Thumbnail Second" src="https://res.cloudinary.com/dpcas2fq7/image/upload/v1525356019/Osefdunom/G._Castellier.png"
+                />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img class="card-img-top" alt="Bootstrap Thumbnail Third" src="https://res.cloudinary.com/dpcas2fq7/image/upload/v1525356017/Osefdunom/L._Lanchon.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
