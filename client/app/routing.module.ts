@@ -1,3 +1,6 @@
+import { NewsComponent } from './news/news.component';
+import { BilleterieComponent } from './billeterie/billeterie.component';
+import { TeamsComponent } from './teams/teams.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -15,12 +18,15 @@ import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AboutComponent },
+  { path: 'teams', component: TeamsComponent },
+  { path: 'news', component: NewsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'matches', component: MatchesComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'billeterie', component: BilleterieComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'notfound', component: NotFoundComponent },
