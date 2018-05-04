@@ -1,0 +1,10 @@
+@font-face {
+    font-family: textes;
+    src: url('/assets/Fonts/SF Atarian System Extended.ttf');
+}
+
+p {
+    font-family: textes;
+    text-align: center;
+    font-size: 25px;
+}
