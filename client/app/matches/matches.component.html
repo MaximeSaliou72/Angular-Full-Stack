@@ -1,0 +1,76 @@
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row align-items-center">
+          <div class="col-md-4" *ngIf="compteur >= 1">
+            <img class='img-fluid' src="./assets/images/algerie.jpg">
+            <img class='img-fluid' src="./assets/images/france.jpg">
+            <img class='img-fluid' src="./assets/images/spain.png">
+            <img class='img-fluid' src="./assets/images/russia.jpg">
+          </div>
+          <div class="col-md-4" *ngIf="compteur >= 2">
+            <img class='img-fluid' src="./assets/images/france.jpg">
+            <img class='img-fluid' src="./assets/images/spain.png">
+          </div>
+          <div class="col-md-4" *ngIf="compteur >= 3">
+            <img class='img-fluid' src="./assets/images/france.jpg">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row align-items-center">
+          <div class="col-md-4" *ngIf="compteur >= 3">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
+          </div>
+          <div class="col-md-4" *ngIf="compteur >= 3">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
+            <img class='img-fluid' src="./assets/images/Sweden.png">
+          </div>
+          <div class="col-md-4 offset-md-4" *ngIf="compteur == 2">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
+            <img class='img-fluid' src="./assets/images/Sweden.png">
+          </div>
+          <div class="col-md-4 offset-md-8" *ngIf="compteur == 1">
+            <img class='img-fluid' src="./assets/images/Sweden.png">
+            <img class='img-fluid' src="./assets/images/brazil.jpg">
+            <img class='img-fluid' src="./assets/images/polish.png">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
+          </div>
+          <div class="col-md-4" *ngIf="compteur >= 2">
+            <img class='img-fluid' src="./assets/images/Sweden.png">
+            <img class='img-fluid' src="./assets/images/brazil.jpg">
+            <img class='img-fluid' src="./assets/images/polish.png">
+            <img class='img-fluid' src="./assets/images/portugal.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button class="action-button shadow animate orange" type="button" *ngIf="compteur == 1" (click)="comptage()">Quart de finale!</button>
+    <button class="action-button shadow animate orange" type="button" *ngIf="compteur == 2" (click)="comptage()">Demi-Finale!</button>
+    <button class="action-button shadow animate orange" type="button" *ngIf="compteur == 3" (click)="comptage()">Finale!</button>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row align-items-center" *ngIf="compteur >= 4">
+      <div class="col-md-2">
+        <a href="http://www.gifsanimes.com/cat-feux-d-artifice-492.htm">
+          <img src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
+          />
+        </a>
+      </div>
+      <div class="col-md-8 d-flex justify-content-center">
+        <img class='imgWinner' src="./assets/images/france.jpg">
+      </div>
+      <div class="col-md-2">
+        <a href="http://www.gifsanimes.com/cat-feux-d-artifice-492.htm">
+          <img src="http://www.gifsanimes.com/data/media/492/feu-d-artifice-image-animee-0009.gif" alt="feu-d-artifice-image-animee-0009"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
