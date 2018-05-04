@@ -28,13 +28,8 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    CatsComponent,
-    WilderComponent,
-=======
     HomeComponent,
     MatchesComponent,
->>>>>>> devMaximeS
     AboutComponent,
     RegisterComponent,
     LoginComponent,
