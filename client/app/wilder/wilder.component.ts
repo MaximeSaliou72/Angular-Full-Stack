@@ -14,6 +14,7 @@ export class WilderComponent implements OnInit {
 
   wilder = new Wilder();
   wilders: Wilder[] = [];
+  teams: Wilder[][];
   isLoading = true;
   isEditing = false;
 
@@ -39,10 +40,26 @@ export class WilderComponent implements OnInit {
 
   getWilders() {
     this.wilderService.getWilders().subscribe(
-      data => this.wilders = data,
+      (data) => {
+        this.wilders = data;
+        this.createTeams();
+      },
       error => console.log(error),
       () => this.isLoading = false,
     );
+  }
+
+  createTeams() {
+    const obj = {};
+
+    for (const wilder of this.wilders) {
+      if (!obj[wilder.groupName]) {
+        obj[wilder.groupName] = [];
+      }
+      obj[wilder.groupName].push(wilder);
+    }
+    this.teams = Object.values(obj);
+    console.log(this.teams);
   }
 
   addWilder() {
